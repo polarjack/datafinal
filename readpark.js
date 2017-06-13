@@ -29,6 +29,32 @@ function gothrough(tofind) {
   return after.length
 }
 
-all.map((value) => console.log(gothrough(value)))
+//all.map((value) => console.log(gothrough(value)))
+function forpark(tofind) {
+  //console.log(tofind)
+  var after = park.filter((a) => {
+    return a.AdministrativeArea == tofind;
+  }) 
+  var output = after.map((v) => { return v.Area.toString()}).map((v) => { return parseInt(v.replace(',', ''))}).reduce((a, b) => {return a + b})
+  console.log(output)
+}
+//forpark("文山區")
+all.map((value) => forpark(value))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
